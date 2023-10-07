@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "baguchan.bagus_fight.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "refmap": "bagus_fight.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+    "PPlayerRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
