@@ -7,7 +7,7 @@
   "mixins": [
   ],
   "client": [
-    "PPlayerRendererMixin"
+    "PLivingRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
