@@ -35,7 +35,7 @@ public class PatchedEnchantLayer<T extends LivingEntity, P extends LivingEntityP
                 if (this.currentMesh != null) {
                     float intensity = cap.getEnchantCap().getMobEnchants().size() < 3 ? (float) cap.getEnchantCap().getMobEnchants().size() / 3.0F : 3.0F;
                     float f = (float) entitylivingbaseIn.tickCount + partialTicks;
-                    VertexConsumer ivertexbuilder = multiBufferSource.getBuffer(EpicFightRenderTypes.triangles(enchantSwirl(cap.getEnchantCap().isAncient() ? ANCIENT_GLINT : ItemRenderer.ENCHANTED_GLINT_ENTITY)));
+                    VertexConsumer ivertexbuilder = multiBufferSource.getBuffer(EpicFightRenderTypes.triangles(enchantSwirl(cap.getEnchantCap().isAncient() ? ANCIENT_GLINT : ItemRenderer.ENCHANT_GLINT_LOCATION)));
                     this.currentMesh.drawModelWithPose(poseStack, ivertexbuilder, packedLightIn, intensity, intensity, intensity, 1.0F, OverlayTexture.NO_OVERLAY, Armatures.getArmatureFor(p), openMatrix4fs);
                 }else {
                     this.currentMesh = animatedMesh;

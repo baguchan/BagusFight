@@ -134,9 +134,9 @@ dependencies {
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
-    implementation fg.deobf("curse.maven:epic-fight-mod-405076:4796372")
-    implementation fg.deobf("curse.maven:bagus-lib-866533:4785226")
-    implementation fg.deobf("curse.maven:enchant-with-mob-913523:4782903")
+    implementation fg.deobf("curse.maven:epic-fight-mod-405076:4794940")
+    implementation fg.deobf("curse.maven:bagus-lib-866533:4785228")
+    implementation fg.deobf("curse.maven:enchant-with-mob-913523:4801322")
     // Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
