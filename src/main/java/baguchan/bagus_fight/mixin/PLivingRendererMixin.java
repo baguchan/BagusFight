@@ -33,7 +33,7 @@ public abstract class PLivingRendererMixin<E extends LivingEntity, T extends Liv
         addPatchedLayer(EnchantedEyesLayer.class, new EmptyLayer<>());
     }
 
-    @Shadow
+    @Shadow(remap = false)
     public void addPatchedLayer(Class<?> originalLayerClass, PatchedLayer<E, T, M, ? extends RenderLayer<E, M>, AM> patchedLayer) {
     }
 }
