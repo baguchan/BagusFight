@@ -1,6 +1,5 @@
 package baguchan.bagus_fight.client;
 
-import bagu_chan.bagus_lib.client.layer.IArmor;
 import baguchan.enchantwithmob.api.IEnchantCap;
 import baguchan.enchantwithmob.client.render.layer.EnchantLayer;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -8,12 +7,12 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.ItemRenderer;
-import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.world.entity.LivingEntity;
 import yesman.epicfight.api.client.model.AnimatedMesh;
 import yesman.epicfight.api.utils.math.OpenMatrix4f;
 import yesman.epicfight.client.ClientEngine;
+import yesman.epicfight.client.renderer.EpicFightRenderTypes;
 import yesman.epicfight.client.renderer.patched.layer.PatchedLayer;
 import yesman.epicfight.gameasset.Armatures;
 import yesman.epicfight.world.capabilities.entitypatch.LivingEntityPatch;
@@ -36,7 +35,7 @@ public class PatchedEnchantLayer<T extends LivingEntity, P extends LivingEntityP
                 if (this.currentMesh != null) {
                     float intensity = cap.getEnchantCap().getMobEnchants().size() < 3 ? (float) cap.getEnchantCap().getMobEnchants().size() / 3.0F : 3.0F;
                     float f = (float) entitylivingbaseIn.tickCount + partialTicks;
-                    VertexConsumer ivertexbuilder = multiBufferSource.getBuffer(enchantSwirl(cap.getEnchantCap().isAncient() ? ANCIENT_GLINT : ItemRenderer.ENCHANTED_GLINT_ENTITY));
+                    VertexConsumer ivertexbuilder = multiBufferSource.getBuffer(EpicFightRenderTypes.triangles(enchantSwirl(cap.getEnchantCap().isAncient() ? ANCIENT_GLINT : ItemRenderer.ENCHANTED_GLINT_ENTITY)));
                     this.currentMesh.drawModelWithPose(poseStack, ivertexbuilder, packedLightIn, intensity, intensity, intensity, 1.0F, OverlayTexture.NO_OVERLAY, Armatures.getArmatureFor(p), openMatrix4fs);
                 }else {
                     this.currentMesh = animatedMesh;
